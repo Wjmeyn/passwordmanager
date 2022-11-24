@@ -1,0 +1,35 @@
+<div >
+  <mat-toolbar>
+  <p mat-subheader class="title">Add Credential</p>
+    </mat-toolbar>
+</div>
+<div>
+  <div>
+    <mat-form-field class="domain" appearance="fill" >
+      <mat-label>domain</mat-label>
+      <input matInput disabled readonly type="string" placeholder="{{credential.domain}}" value="{{credential.domain}}" (change)="updateDomain($event)">
+    </mat-form-field>
+
+  </div>
+
+  <div>
+    <mat-form-field class="username" appearance="fill">
+      <mat-label>username</mat-label>
+      <input matInput type="string" placeholder="{{credential.username}}" value="{{credential.username}}" (change)="updateUsername($event)">
+    </mat-form-field>
+
+  </div>
+
+  <div>
+    <mat-form-field class="password" appearance="fill">
+      <mat-label>password</mat-label>
+      <input matInput type="string" placeholder="{{credential.password}}" value="{{credential.password}}" (change)="updatePassword($event)">
+    </mat-form-field>
+
+  </div>
+</div>
+
+<div>
+  <button mat-button class="button" color="accent" (click)=save()>Save</button>
+</div>
+

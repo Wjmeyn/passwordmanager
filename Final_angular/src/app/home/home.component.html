@@ -1,0 +1,29 @@
+
+<mat-toolbar>
+  <button mat-button class = "home"  color="primary"(click)="loadCredentials()">My Credentials</button>
+
+  <button mat-button  class = "shared" color="primary" (click)="loadShared()">Shared</button>
+
+
+  <button mat-button class = "sharedwith" color="primary" (click)="loadSharedWithMe()">Shared with me</button>
+
+  <mat-form-field class="search" >
+      <input  type="text" matInput placeholder="Search" (input)="filterCredentials($event)">
+  </mat-form-field>
+
+</mat-toolbar>
+
+
+<div class="credential-container">
+
+  <credential-component class="card-item" *ngFor="let credential of showcredentials" [credential]="credential" (eventEmitter)= "reload()" (deleteEvent) = "deleteCredential($event)"></credential-component>
+
+
+</div>
+
+
+<div class="fab-container">
+  <button mat-flat-button color="primary"  matTooltip="Add new class" routerLink="/add">
+    <i class="material-icons">add</i>
+  </button>
+</div>
